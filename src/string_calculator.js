@@ -1,5 +1,5 @@
 function add(stringInput) {
-    return 0;
+    return stringInput;
 }
 
 
