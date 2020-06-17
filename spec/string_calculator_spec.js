@@ -60,10 +60,6 @@ describe("Add", () => {
     expect(add("//[abc][777][:(] \n1abc27773:(1")).toBe(7);
   });
 
-  it("should handle different delimiters of any length", () => {
-    expect(add("//[abc][7be][689] \n1abc27be36891")).toBe(7);
-  });
-
   it("should return error for strings ending with other symbols", () => {
     expect(() => add("//;\n1000;1;2;")).toThrowError("invalid input");
   });
@@ -76,7 +72,4 @@ describe("Add", () => {
     expect(() => add("1,2,3//;\n1000,1;2")).toThrowError("invalid input");
   });
 
-  it("should return error for strings beginning alphabetic characters", () => {
-    expect(() => add("a,B,c//;\n1000,1;2")).toThrowError("invalid input");
-  });
 });
